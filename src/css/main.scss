@@ -1,0 +1,49 @@
+.question {
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba($color: #777, $alpha: 0.3);
+    padding: 30px;
+    margin-top: 30px;
+    .options {
+        ul {
+            padding-left: 30px;
+            margin-top: 30px;
+            li {
+                list-style: none;
+                position: relative;
+                margin-bottom: 10px;
+                transition: all .5s;
+                padding: 10px;
+                border-radius: 10px;
+                cursor: pointer;
+                &.selected {
+                    background-color: #ebebeb;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                        background-image: url(../images/check.svg);
+                        background-size: 100%;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        left: -30px;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                    }
+                }
+                &:hover {
+                    background-color: #ebebeb;
+                    transition: all .5s;
+                }
+            }
+        }
+    }
+    .feedback {
+        margin-top: 30px;
+        .correct,
+        .incorrect {
+            display: none;
+        }
+    }
+}
