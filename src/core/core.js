@@ -1,11 +1,11 @@
 class Core {
 
-    render(component) {
-        $("#root").html(component)
+    async render(component) {
+        await $("#root").html(component)
     }
     
-    include(target, component) {
-        $(target).html(component)
+    async include(target, component) {
+        await $(target).html(component)
     }
 
 }

@@ -6,12 +6,12 @@ const home = new HomeController()
 
 class RoutesController extends Core {    
 
-    index() {        
-        home.index()       
+    async index() {        
+        await home.index()
     }
 
-    blog() {
-        this.render(blog)
+    async blog() {
+        await this.render(blog)
     }
 
 }
