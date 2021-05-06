@@ -1,13 +1,18 @@
 import Core from '../core/core.js'
+import home from '../components/home/index.js'
+import blog from '../components/blog/index.js'
 
 class RoutesController extends Core {
 
     index() {
-        this.render('home')
+        $.get(window.apiURL)
+        .then((response) => {
+            this.render(home(response.title)) 
+        })       
     }
 
-    salve() {
-        this.render('salve')
+    blog() {
+        this.render(blog)
     }
 
 }

@@ -4,4 +4,4 @@ import './config/index.js'
 import route from './core/route.js'
 
 route('/','index')
-route('/salve','salve')
+route('/blog','blog')

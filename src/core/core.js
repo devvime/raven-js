@@ -1,11 +1,11 @@
 class Core {
 
     render(component) {
-        $("#root").load("src/components/" + component + ".html")
+        $("#root").html(component)
     }
-
+    
     include(target, component) {
-        $(target).load("src/components/" + component + ".html")
+        $(target).html(component)
     }
 
 }
