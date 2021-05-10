@@ -19,7 +19,7 @@ class HomeController extends Core {
 
         await this.render(home(data))
 
-        await data.map((value)=>{
+        await data.map((value)=>{                
                 $("#loop").append(`
                     <div class="col-md-4 anime" data-delay="400">
                         <img width="100%" src="${value.image}">
