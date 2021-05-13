@@ -1,6 +1,7 @@
 const home = (data) => {
-    
-    return(
+
+    return (
+        /*html*/
         `<div class="container">
             <div class="row">
                 <div class="col-lg-12" id="xablau">
@@ -10,7 +11,7 @@ const home = (data) => {
             <div class="row" id="loop"></div>
         </div>`
     )
-        
+
 }
 
 export default home

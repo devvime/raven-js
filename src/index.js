@@ -1,14 +1,20 @@
 import './dependences/index.js'
-import route from './core/route.js'
+import Route from './core/route.js'
 
-const routes = [
-    { get: '/', action: 'index' },
-    { get: '/blog', action: 'blog' },
-    { get: '/blog/$id', action: 'readBlog' }
+var routes = [
+    //Routes
+    {
+        path: '/',
+        action: 'index'
+    },
+    {
+        path: '/blog',
+        action: 'blog'
+    },
+    {
+        path: '/blog/$id',
+        action: 'readBlog'
+    }
 ]
 
-route(routes)
-
-// route('/', 'index')
-// route('/blog', 'blog')
-// route('/blog/$id', 'readBlog')
+Route(routes)

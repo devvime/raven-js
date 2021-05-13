@@ -1,42 +1,52 @@
-import RoutesController from '../controllers/RoutesController.js'
-const road = new RoutesController
+import RoutesController from "../controllers/RoutesController.js"
 
-// async function route(param, callback) {        
+async function Route(routes) {
 
-//     var setRoute = window.baseURL + param
-//     var action = 'road.' + callback + '()'
+    window.onload = () => {
 
-//     var paramiter = param.split("$")
-//     var newParam = window.location.href.substring(window.location.href.lastIndexOf("/") + 1)
-
-//     if (paramiter[1] != undefined) {
-//         setRoute = window.baseURL + paramiter[0] + newParam
-//         action = 'road.' + callback + '(newParam)'
-//     }
-
-//     if(window.location.href === setRoute) {
-//         await eval(action)
-//     }    
-// }
-
-async function route(routes) {
-
-    routes.forEach(route => {
-        var setRoute = window.baseURL + route.get
-        var action = 'road.' + route.action + '()'
-
-        var paramiter = route.get.split("$")
-        var newParam = window.location.href.substring(window.location.href.lastIndexOf("/") + 1)
-
-        if (paramiter[1] != undefined) {
-            setRoute = window.baseURL + paramiter[0] + newParam
-            action = 'road.' + route.action + '(newParam)'
+        var Router = function(name, routes) {
+            return {
+                name: name,
+                routes: routes
+            }
         }
 
-        if (window.location.href === setRoute) {
-            eval(action)
+        var firstRouter = new Router('Router', routes)
+
+        var currentPath = window.location.pathname
+
+        var setAction = ''
+        var getParam = window.location.pathname.substring(window.location.pathname.lastIndexOf("/") + 1)
+
+        if (currentPath === '/') {
+            RoutesController.index()
+        } else {
+            var route = firstRouter.routes.filter(function(r) {
+
+                if (r.path.indexOf("$")) {
+                    var param = r.path.split("$")
+
+                    if (param[1] != undefined) {
+                        r.path = param[0] + getParam
+                        setAction = 'RoutesController.' + r.action + '(getParam)'
+                    }
+                } else {
+                    setAction = 'RoutesController.' + r.action + '()'
+                }
+
+                return r.path === currentPath
+            })[0]
+
+            if (route) {
+                eval(setAction)
+            } else {
+                RoutesController.notFound()
+            }
         }
-    })
+
+
+    }
+
 }
 
-export default route
+export default Route
