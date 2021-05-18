@@ -1,4 +1,4 @@
-class Core {
+class Raven {
 
     static render(component) {
         $("#root").html(component)
@@ -10,4 +10,4 @@ class Core {
 
 }
 
-export default Core
+export default Raven

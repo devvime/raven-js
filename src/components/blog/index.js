@@ -1,4 +1,4 @@
-import Core from '../../core/core.js'
+import Raven from '../../raven/index.js'
 
 const component = () => {
     return (
@@ -15,7 +15,7 @@ const component = () => {
 }
 
 function blog() {
-    Core.render(component)
+    Raven.render(component)
 }
 
 export default blog

@@ -1,4 +1,4 @@
-import Core from '../../core/core.js'
+import Raven from '../../raven/index.js'
 
 const component = () => {
     return (
@@ -16,7 +16,7 @@ const component = () => {
 
 function index() {
 
-    Core.render(component)
+    Raven.render(component)
 
     var data = [{
             image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80',
