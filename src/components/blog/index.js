@@ -1,5 +1,6 @@
-const blog = () => {
+import Core from '../../core/core.js'
 
+const component = () => {
     return (
         /*html*/
         `<div class="container">
@@ -11,6 +12,10 @@ const blog = () => {
             </div>
         </div>`
     )
+}
+
+function blog() {
+    Core.render(component)
 }
 
 export default blog

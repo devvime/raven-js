@@ -1,16 +1,15 @@
+import blog from './components/blog/index.js'
+import readBlog from './components/readBlog/index.js'
+
 const routes = [
     //Routes
     {
-        path: '/',
-        action: 'index'
-    },
-    {
         path: '/blog',
-        action: 'blog'
+        component: blog
     },
     {
         path: '/blog/$id',
-        action: 'readBlog'
+        component: readBlog
     }
 ]
 

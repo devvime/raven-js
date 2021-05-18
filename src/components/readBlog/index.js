@@ -1,5 +1,6 @@
-const readBlog = (data) => {
+import Core from '../../core/core.js'
 
+const component = (data) => {
     return (
         /*html*/
         `<div class="container">
@@ -11,6 +12,10 @@ const readBlog = (data) => {
             </div>
         </div>`
     )
+}
+
+function readBlog() {
+    Core.render(component)
 }
 
 export default readBlog

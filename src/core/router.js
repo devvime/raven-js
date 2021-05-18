@@ -1,4 +1,5 @@
-import RoutesController from "../controllers/RoutesController.js"
+import index from '../components/index/index.js'
+import notFound from '../components/notFound/404.js'
 
 async function Route(routes) {
 
@@ -15,11 +16,10 @@ async function Route(routes) {
 
         var currentPath = window.location.pathname
 
-        var setAction = ''
         var getParam = window.location.pathname.substring(window.location.pathname.lastIndexOf("/") + 1)
 
         if (currentPath === '/') {
-            RoutesController.index()
+            $("#root").html(index)
         } else {
             var route = firstRouter.routes.filter(function(r) {
 
@@ -28,19 +28,16 @@ async function Route(routes) {
 
                     if (param[1] != undefined) {
                         r.path = param[0] + getParam
-                        setAction = 'RoutesController.' + r.action + '(getParam)'
                     }
-                } else {
-                    setAction = 'RoutesController.' + r.action + '()'
                 }
 
                 return r.path === currentPath
             })[0]
 
             if (route) {
-                eval(setAction)
+                $("#root").html(route.component(getParam))
             } else {
-                RoutesController.notFound()
+                $("#root").html(notFound)
             }
         }
 
