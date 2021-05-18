@@ -1,20 +1,5 @@
 import './dependences/index.js'
-import Route from './core/route.js'
+import Router from './core/router.js'
+import Routes from './routes.js'
 
-var routes = [
-    //Routes
-    {
-        path: '/',
-        action: 'index'
-    },
-    {
-        path: '/blog',
-        action: 'blog'
-    },
-    {
-        path: '/blog/$id',
-        action: 'readBlog'
-    }
-]
-
-Route(routes)
+Router(Routes)

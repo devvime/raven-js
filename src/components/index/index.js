@@ -1,4 +1,4 @@
-const home = (data) => {
+const home = () => {
 
     return (
         /*html*/

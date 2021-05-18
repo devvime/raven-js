@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
     const debounce = function(func, wait, immediate) {
         var timeout;
         return function() {
@@ -14,16 +14,16 @@ $(document).ready(function(){
             if (callNow) func.apply(context, args);
         };
     };
-    
-    
+
+
     (function() {
         var $target = $('.anime'),
             animationClass = 'anime-start',
             offset = $(window).height() * 3 / 4;
-    
+
         function animeScroll() {
             var documentTop = $(document).scrollTop();
-    
+
             $target.each(function() {
                 var itemTop = $(this).offset().top;
                 if (documentTop > itemTop - offset) {
@@ -40,9 +40,9 @@ $(document).ready(function(){
                 }
             });
         }
-    
+
         animeScroll();
-    
+
         $(document).scroll(debounce(function() {
             animeScroll();
         }, 200));

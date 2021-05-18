@@ -1,5 +1,5 @@
 import Core from '../core/core.js'
-import home from '../components/home/index.js'
+import index from '../components/index/index.js'
 
 class HomeController extends Core {
 
@@ -19,7 +19,7 @@ class HomeController extends Core {
             }
         ]
 
-        this.render(home(data))
+        this.render(index)
 
         data.map((value) => {
             $("#loop").append(`
