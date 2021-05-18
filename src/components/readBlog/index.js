@@ -14,8 +14,8 @@ const component = (data) => {
     )
 }
 
-function readBlog() {
-    Core.render(component)
+function readBlog(data) {
+    Core.render(component(data))
 }
 
 export default readBlog
