@@ -5,7 +5,7 @@ const component = (data) => {
         /*html*/
         `<div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 text-light">
                     <h1 class="display-1">Blog</h1>
                     <p>${data}</p>
                 </div>
