@@ -3,14 +3,34 @@ import Raven from '../../raven/index.js'
 const component = () => {
     return (
         /*html*/
-        `<div class="container">
-            <div class="row">
-                <div class="col-lg-12" id="xablau">
-                    <h1 class="display-1 anime" data-delay="200">Home</h1>                        
-                </div>                 
+        `<section clas="index">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="jumbotron anime" data-delay="200">
+                            <h1 class="display-3">Raven JS <span><img src="public/@raven/images/raven.png" /></span></h1>
+                            <p class="lead">Micro framework (Router Simple Javascript with basic componentization)</p>
+                            <hr class="my-2">
+                            <p>More info</p>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img src="https://avatars.githubusercontent.com/u/36117649?v=4" class="profile" />
+                                </div>
+                                <div class="col-md-10 buttons">
+                                    <p><strong>Victor Alves Mendes</strong></p>
+                                    <a href="https://github.com/devvime" target="_blank">
+                                        <img src="public/@raven/images/github-light.png" />
+                                    </a>
+                                    <a href="https://www.instagram.com/viimee" target="_blank">
+                                        <img src="public/@raven/images/instagram-light.png" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>                      
+                    </div>                 
+                </div>
             </div>
-            <div class="row" id="loop"></div>
-        </div>`
+        </section>`
     )
 }
 
@@ -18,27 +38,6 @@ function index() {
 
     Raven.render(component)
 
-    var data = [{
-            image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80',
-            delay: '400'
-        },
-        {
-            image: 'https://images.unsplash.com/photo-1592169813474-dd0c8e52e3bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-            delay: '600'
-        },
-        {
-            image: 'https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80',
-            delay: '800'
-        }
-    ]
-
-    data.map((value) => {
-        $("#loop").append(`
-                <div class="col-md-4 anime" data-delay="${value.delay}">
-                    <img width="100%" src="${value.image}">
-                </div>
-            `)
-    })
 }
 
 export default index
