@@ -10,6 +10,18 @@ const routes = [
     {
         path: '/blog/$id',
         component: readBlog
+    },
+    {
+        path: '/blog/$id/$name',
+        component: readBlog
+    },
+    {
+        path: '/blog/$id/$name/$email',
+        component: readBlog
+    },
+    {
+        path: '/blog/$id/$name/$email/$pass',
+        component: readBlog
     }
 ]
 
