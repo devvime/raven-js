@@ -7,7 +7,7 @@ const component = () => {
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
-                        <div class="jumbotron anime" data-delay="200">
+                        <div class="jumbotron" data-delay="200">
                             <h1 class="display-3">Raven JS <span><img src="public/@raven/images/raven.png" /></span></h1>
                             <p class="lead">Micro framework (Router Simple Javascript with basic componentization)</p>
                             <hr class="my-2">
@@ -36,7 +36,11 @@ const component = () => {
 
 function index() {
 
-    Raven.render(component)
+    Raven.loadStyle("/public/@raven/css/style.css")
+
+    $(document).ready(function() {
+        Raven.render(component)
+    })
 
 }
 
