@@ -41,8 +41,10 @@ async function Route(routes) {
             })[0]
 
             if (route) {
+                window.history.pushState({}, '', route.path)
                 $("#root").html(route.component(setParam))
             } else {
+                window.history.pushState({}, '', 'error')
                 $("#root").html(notFound)
             }
         }
