@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime'
 import index from '../components/index/index.js'
 import notFound from '../components/notFound/404.js'
 
